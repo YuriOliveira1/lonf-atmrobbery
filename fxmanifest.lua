@@ -5,8 +5,24 @@ author 'Yuri de Oliveira'
 description 'Atm Robbery For QBX'
 version '1.0.0'
 
--- What to run
-client_scripts {
-    'client.lua',
+dependencies {
+    'qbx_core',
+    'ox_lib',
+	'ox_inventory'
 }
-server_script 'server.lua'
+
+shared_scripts {
+    'config.lua',
+    '@ox_lib/init.lua',
+    '@qbx_core/modules/playerdata.lua',
+}
+
+server_scripts {
+    'server/server.lua'
+}
+
+client_scripts {
+    'client/client.lua'
+}
+
+lua54 'yes'
